@@ -1,0 +1,120 @@
+
+:root {
+    --primary-red: #E9001D; /* צבע אדום של שגריר */
+    --secondary-yellow: #FFC107; /* צבע צהוב של שגריר */
+    --background-light: #FFFFFF; /* צבע רקע בהיר */
+    --text-dark: #000000; /* צבע טקסט כהה */
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+}
+
+#shagrir-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+h1, h2, h3, span, p, div {
+    color: var(--text-dark);
+}
+
+#form-entity {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#form-entity input,
+#form-entity select,
+#form-entity textarea {
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    border: 2px solid var(--secondary-yellow);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#form-entity input:focus,
+#form-entity select:focus,
+#form-entity textarea:focus {
+    outline: 2px solid var(--secondary-yellow);
+}
+
+button {
+    background-color: var(--secondary-yellow);
+    color: var(--primary-red);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-red);
+    color: var(--text-dark);
+}
+
+.select2-container-multi .select2-choices .select2-search-choice {
+    background: var(--secondary-yellow);
+    color: var(--primary-red);
+}
+
+.select2-drop {
+    border-radius: 8px;
+    background-color: var(--background-light);
+}
+
+.select2-drop ul li.select2-highlighted {
+    background: var(--secondary-yellow);
+    color: var(--primary-red);
+}
+
+ul.select2-choices,
+input,
+a.select2-choice,
+.textarea_field textarea {
+    border-radius: 8px;
+    background: #f0f0f0;
+    color: var(--text-dark);
+    text-align: right;
+    padding: 10px;
+}
+
+.create_entity_buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.create_entity_buttons button.btn {
+    background-color: var(--secondary-yellow);
+    color: var(--primary-red);
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+@media (min-width: 980px) {
+    .entity .field_group_body .form_data_element_wrap {
+        width: 48%;
+    }
+}
