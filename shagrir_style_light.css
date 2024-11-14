@@ -1,140 +1,92 @@
-/*@font-face {
-  font-display: swap;
-  font-family: 'FB open heb';
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://academy.roy-ribak.co.il/wp-content/uploads/2022/06/fbcoherentisansen-regularwebfont.ttf');
-}*/
-
-/*@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');*/
-
 :root {
     --primary-orange: #FF8C00; /* צבע כתום */
     --secondary-yellow: #FFD54F; /* צבע צהוב */
     --background-light: #FFFFFF; /* צבע רקע לבן */
-    --grey: #464646; /* צבע רקע שדות */
+    --background-form: #FFF8E1; /* צבע רקע עדין לטופס */
+    --input-bg: #FAFAFA; /* צבע רקע לשדות */
+    --input-border: #E0E0E0; /* צבע גבול עדין */
+    --text-dark: #333333; /* צבע טקסט כהה */
 }
 
-form#form-entity > div:last-child {
-    display: none;
-}
-
-h1, h2, h3, span, p, div {
-    color: var(--primary-orange);
-}
-
-div#entity-container div {
-    background: transparent;
-    color: var(--grey);
-    font-size: 16px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-div#entity-container .field_group.ng-scope.field_group_odd {
-    border: none;
-}
-
-div#entity-container {
-    border-radius: 20px !important;
-    overflow: hidden;
-    background: var(--background-light);
-    padding: 20px 15px;
-}
-
-.select2-container-multi .select2-choices .select2-search-choice {
-    background: var(--secondary-yellow);
-    color: var(--primary-orange);
-}
-
-.select2-drop {
-    border-radius: 8px;
+body {
     background-color: var(--background-light);
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 
-.select2-drop ul li.select2-highlighted {
-    background: var(--secondary-yellow);
+#form-entity {
+    background-color: var(--background-form);
+    border-radius: 15px;
+    padding: 30px 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#form-entity h1 {
+    font-size: 24px;
     color: var(--primary-orange);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.select2-drop ul li:not(.select2-highlighted) {
-    background: var(--grey);
-    color: var(--background-light);
+#form-entity label {
+    font-weight: bold;
+    color: var(--primary-orange);
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-/* שדות קלט */
-ul.select2-choices,
-input,
-a.select2-choice,
-.textarea_field textarea {
-    border-radius: 8px !important;
-    background: var(--background-light) !important;
-    border: 1px solid var(--grey);
-    color: var(--grey) !important;
-    text-align: right !important;
-    padding: 10px;
-    transition: border-color 0.3s ease;
+#form-entity input,
+#form-entity select,
+#form-entity textarea {
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
 }
 
-ul.select2-choices:focus,
-input:not(.select2-input):focus,
-a.select2-choice:focus,
-.textarea_field textarea:focus {
-    outline: 1px solid var(--secondary-yellow) !important;
+#form-entity input:focus,
+#form-entity select:focus,
+#form-entity textarea:focus {
+    outline: none;
     border-color: var(--primary-orange);
-    box-shadow: 0 0 5px rgba(255, 140, 0, 0.4);
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
 }
 
-.content-box {
-    line-height: 1.5;
-    color: var(--primary-orange);
-}
-
-/* כפתורים */
 .create_entity_buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.create_entity_buttons button.btn {
-    border-radius: 8px;
+.create_entity_buttons button {
     background-color: var(--primary-orange);
     color: var(--background-light);
-    font-size: 16px;
-    font-weight: 600;
-    padding: 15px 30px;
-    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.create_entity_buttons button.btn:hover {
+.create_entity_buttons button:hover {
     background-color: var(--secondary-yellow);
-    color: var(--grey);
-    transform: translateY(-2px);
-}
-
-.entity .field_group div.modal_tooltip.ng-scope {
-    top: 0;
-    left: 0;
-    padding: 5px;
-}
-
-.entity .field_group div.modal_tooltip.ng-scope span {
-    margin: 0 !important;
-}
-
-.entity .field_group div.modal_tooltip.ng-scope .popover {
-    background: var(--grey) !important;
-    border-color: var(--secondary-yellow);
-}
-
-.entity input,
-.select2-container-multi ul.select2-choices {
-    border-color: #DDDDDD;
-}
-
-@media (min-width: 980px) {
-    .entity .field_group_body .form_data_element_wrap {
-        width: 50% !important;
-    }
+    color: var(--text-dark);
 }
