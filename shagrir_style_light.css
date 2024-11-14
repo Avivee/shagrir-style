@@ -1,106 +1,118 @@
 :root {
-    --primary-orange: #FFA726; /* צבע כתום חם */
-    --secondary-yellow: #FFD54F; /* צבע צהוב בהיר */
-    --background-shagrir: #E53935; /* צבע רקע של שגריר */
-    --form-bg: #FFF8E1; /* צבע רקע עדין לטופס */
-    --input-bg: #FAFAFA; /* צבע רקע לשדות */
-    --input-border: #E0E0E0; /* צבע גבול עדין */
-    --shadow-light: rgba(0, 0, 0, 0.1); /* צל קל */
-    --text-dark: #333333; /* צבע טקסט כהה */
+    --primary-orange: #FF8C00; /* צבע כתום זוהר */
+    --secondary-yellow: #FFD700; /* צבע צהוב בוהק */
+    --background-shagrir: #E53935; /* צבע אדום רקע של שגריר */
+    --form-bg: #FFF8E1; /* צבע רקע לטופס */
+    --input-bg: #FFFFFF; /* צבע רקע לשדות קלט */
+    --input-border: #DDDDDD; /* צבע גבול עדין */
+    --text-color: #333333; /* צבע טקסט כהה */
+    --shadow: rgba(0, 0, 0, 0.15); /* צל */
+    --focus-shadow: rgba(255, 140, 0, 0.4); /* צל פוקוס */
 }
 
 body {
     background-color: var(--background-shagrir);
-    color: var(--text-dark);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 #form-entity {
     background-color: var(--form-bg);
-    border-radius: 12px;
-    padding: 40px;
+    border-radius: 15px;
+    padding: 40px 50px;
     max-width: 600px;
-    width: 100%;
-    box-shadow: 0 4px 15px var(--shadow-light);
-    text-align: left;
+    width: 90%;
+    box-shadow: 0 8px 20px var(--shadow);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#form-entity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 #form-entity h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: var(--primary-orange);
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
 #form-entity .section-header {
-    background-color: var(--secondary-yellow);
-    padding: 10px;
+    background: linear-gradient(135deg, var(--primary-orange), var(--secondary-yellow));
+    color: var(--text-color);
+    padding: 12px;
     border-radius: 8px;
     font-weight: bold;
-    color: var(--primary-orange);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
+    box-shadow: 0 3px 6px var(--shadow);
 }
 
 #form-entity label {
-    font-weight: bold;
-    color: var(--text-dark);
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    text-align: left;
     font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-orange);
+    margin: 20px 0 5px;
 }
 
 #form-entity input,
 #form-entity select,
 #form-entity textarea {
     background-color: var(--input-bg);
-    color: var(--text-dark);
+    color: var(--text-color);
     border: 1px solid var(--input-border);
     border-radius: 8px;
     padding: 12px;
     width: 100%;
-    margin-bottom: 15px;
     font-size: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+    margin-bottom: 15px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #form-entity input:focus,
 #form-entity select:focus,
 #form-entity textarea:focus {
-    outline: none;
     border-color: var(--primary-orange);
-    box-shadow: 0 0 5px rgba(255, 167, 38, 0.3);
-}
-
-button {
-    background-color: var(--primary-orange);
-    color: var(--background-light);
-    border: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    display: block;
-    width: 100%;
-}
-
-button:hover {
-    background-color: var(--secondary-yellow);
-    transform: translateY(-2px);
+    box-shadow: 0 0 8px var(--focus-shadow);
+    outline: none;
 }
 
 .create_entity_buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.create_entity_buttons button {
+    background: linear-gradient(135deg, var(--primary-orange), var(--secondary-yellow));
+    color: var(--form-bg);
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.create_entity_buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.create_entity_buttons button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
