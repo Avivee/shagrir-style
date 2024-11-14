@@ -1,9 +1,10 @@
-
 :root {
     --primary-red: #E9001D; /* צבע אדום של שגריר */
     --secondary-yellow: #FFC107; /* צבע צהוב של שגריר */
     --background-light: #FFFFFF; /* צבע רקע בהיר */
-    --text-dark: #000000; /* צבע טקסט כהה */
+    --text-dark: #333333; /* צבע טקסט כהה */
+    --form-bg: #f9f9f9; /* צבע רקע טופס */
+    --input-border: #cccccc; /* צבע גבול שדות */
 }
 
 body {
@@ -31,82 +32,77 @@ h1, h2, h3, span, p, div {
 }
 
 #form-entity {
-    background-color: var(--primary-red);
-    border-radius: 10px;
-    padding: 20px;
+    background-color: var(--form-bg);
+    border: 2px solid var(--primary-red);
+    border-radius: 15px;
+    padding: 30px;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#form-entity h1 {
+    font-size: 24px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+}
+
+#form-entity label {
+    font-weight: bold;
+    color: var(--primary-red);
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 #form-entity input,
 #form-entity select,
 #form-entity textarea {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     color: var(--text-dark);
-    border: 2px solid var(--secondary-yellow);
-    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
     padding: 10px;
     width: 100%;
     margin-bottom: 15px;
     font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #form-entity input:focus,
 #form-entity select:focus,
 #form-entity textarea:focus {
-    outline: 2px solid var(--secondary-yellow);
+    outline: none;
+    border-color: var(--secondary-yellow);
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
 }
 
 button {
     background-color: var(--secondary-yellow);
     color: var(--primary-red);
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 18px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
     background-color: var(--primary-red);
-    color: var(--text-dark);
-}
-
-.select2-container-multi .select2-choices .select2-search-choice {
-    background: var(--secondary-yellow);
-    color: var(--primary-red);
-}
-
-.select2-drop {
-    border-radius: 8px;
-    background-color: var(--background-light);
-}
-
-.select2-drop ul li.select2-highlighted {
-    background: var(--secondary-yellow);
-    color: var(--primary-red);
-}
-
-ul.select2-choices,
-input,
-a.select2-choice,
-.textarea_field textarea {
-    border-radius: 8px;
-    background: #f0f0f0;
-    color: var(--text-dark);
-    text-align: right;
-    padding: 10px;
+    color: #ffffff;
 }
 
 .create_entity_buttons {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .create_entity_buttons button.btn {
-    background-color: var(--secondary-yellow);
-    color: var(--primary-red);
     padding: 15px 30px;
     font-size: 16px;
     font-weight: bold;
